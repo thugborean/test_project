@@ -26,12 +26,12 @@ type Administrator struct {
 }
 
 // Administrator reciever functions
-func (administrator Administrator) addUser(user User) error {
+func (administrator Administrator) addUser(user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
 
-func (administrator Administrator) removerUser(user User) error {
+func (administrator Administrator) removerUser(user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
@@ -69,7 +69,7 @@ func (projectManager ProjectManager) viewAllReports(project *Project) ([]TimeRep
 	return project.timeReports, errors.New("WIP")
 }
 
-func (projectManager ProjectManager) giveUserRole(user *User, newRole string) error {
+func (projectManager ProjectManager) giveUserRole(user *User, project *Project, newRole string) error {
 	// WIP
 	return errors.New("WIP")
 }
@@ -92,8 +92,8 @@ type User struct {
 
 // User reciever functions
 
-// function used to create a time report
-func (user User) createTimeReport() *TimeReport {
+// function used to create a time report, returning a *TimeReport is questionable
+func (user User) createTimeReport(Project *Project) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
