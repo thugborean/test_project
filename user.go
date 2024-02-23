@@ -52,7 +52,7 @@ type ProjectManager struct {
 	managedProjects map[string]Project // projekt som förvaltas av projektledaren
 	totalTime       uint64             // total totalt tid arbetat av projektledaren
 
-	user User // comp
+	user User // comp, för att kunna skapa och
 }
 
 // ProjectManager reciever functions
@@ -69,9 +69,25 @@ func (projectManager ProjectManager) viewAllReports(project *Project) ([]TimeRep
 	return project.timeReports, errors.New("WIP")
 }
 
+func (projectManager ProjectManager) giveUserRole(user *User, newRole string) error {
+	// WIP
+	return errors.New("WIP")
+}
+
+func (projectManager ProjectManager) removeUserFromProject(user *User, project *Project) error {
+	// WIP
+	return errors.New("WIP")
+}
+
+func (projectManager ProjectManager) viewTotalTime(project *Project) uint64 {
+	// WIP
+	return 0
+}
+
 type User struct {
 	account     Account // comp
 	timereports []TimeReport
+	role        string // ?????
 }
 
 // User reciever functions
@@ -82,7 +98,16 @@ func (user User) createTimeReport() *TimeReport {
 	return &TimeReport{}
 }
 
-func (user User) viewTimeReport() *TimeReport {
+func (user User) viewTimeReport(timereports *[]TimeReport) *TimeReport {
 	// WIP
 	return &TimeReport{}
+}
+
+func (user User) editTimeReport(timereport *TimeReport) {
+	// WIP
+}
+
+func (user User) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
+	// WIP
+	return errors.New("WIP")
 }
