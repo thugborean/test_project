@@ -22,7 +22,7 @@ func (account Account) logout() error {
 type Administrator struct {
 	projects map[string]Project
 	// deletedData ???
-	user User // comp
+	User // comp
 }
 
 // Administrator reciever functions
@@ -52,7 +52,7 @@ type ProjectManager struct {
 	managedProjects map[string]Project // projekt som förvaltas av projektledaren
 	totalTime       uint64             // total totalt tid arbetat av projektledaren
 
-	user User // comp, för att kunna skapa och
+	User // comp
 }
 
 // ProjectManager reciever functions
@@ -85,9 +85,9 @@ func (projectManager ProjectManager) viewTotalTime(project *Project) uint64 {
 }
 
 type User struct {
-	account     Account // comp
 	timereports []TimeReport
 	role        string // ?????
+	Account            // comp
 }
 
 // User reciever functions
@@ -111,4 +111,8 @@ func (user User) editTimeReport(timereport *TimeReport) {
 func (user User) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
 	// WIP
 	return errors.New("WIP")
+}
+
+func (user User) printRole() string {
+	return user.role
 }

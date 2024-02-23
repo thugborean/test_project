@@ -11,7 +11,6 @@ type TimeReport struct {
 	hoursWorked  uint32
 	isSigned     bool
 	reportStatus string // Example "draft", "signed", "unsigned"
-
 }
 
 // TimeReport reciever functions
@@ -34,21 +33,21 @@ func (timeReport TimeReport) printReport() string {
 }
 
 type Project struct {
-	timeReports    []TimeReport
-	projectName    string
-	projectMembers map[string]User
-	projectRoles   map[string]string
-	timeReport     TimeReport // comp
+	timeReports  []TimeReport
+	projectName  string
+	projectUsers map[string]User
+	projectRoles map[string]User
+	TimeReport   // comp
 }
 
 // Project reciever functions // WIP WIP WIP
 
-func (project *Project) addMember(projectmembers *map[string]User, role string) error {
+func (project *Project) addUser(projectUsers *map[string]User, role string) error {
 	//WIP
 	return errors.New("WIP")
 }
 
-func (project *Project) removeMember(member string) error {
+func (project *Project) removeUser(user *User) error {
 	//WIP
 	return errors.New("WIP")
 }
