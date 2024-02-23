@@ -3,7 +3,7 @@ package main
 import "errors"
 
 type TimeReport struct {
-	reportId     int
+	reportId     string
 	projectName  string
 	userName     string
 	userRole     string
