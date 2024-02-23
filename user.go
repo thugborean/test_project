@@ -1,5 +1,7 @@
 package main
 
+import "errors"
+
 type Account struct {
 	fullName string
 	userName string
@@ -7,12 +9,14 @@ type Account struct {
 }
 
 // Account reciever functions
-func (account Account) login() {
+func (account Account) login() error {
 	// WIP
+	return errors.New("WIP")
 }
 
-func (account Account) logout() {
+func (account Account) logout() error {
 	// WIP
+	return errors.New("WIP")
 }
 
 type Administrator struct {
@@ -22,12 +26,14 @@ type Administrator struct {
 }
 
 // Administrator reciever functions
-func (administrator Administrator) addUser(user User) {
+func (administrator Administrator) addUser(user User) error {
 	// WIP
+	return errors.New("WIP")
 }
 
-func (administrator Administrator) removerUser(user User) {
+func (administrator Administrator) removerUser(user User) error {
 	// WIP
+	return errors.New("WIP")
 }
 
 func (administrator Administrator) deleteProject(project *Project) {
@@ -37,8 +43,9 @@ func (administrator Administrator) deleteProject(project *Project) {
 func (administrator Administrator) changeUserRole() {
 	// WIP
 }
-func (administrator Administrator) recoverDeletedData() { // Hur fan ska detta funka dock haha...
+func (administrator Administrator) recoverDeletedData() error { // Hur fan ska detta funka dock haha...
 	// WIP
+	return errors.New("WIP")
 }
 
 type ProjectManager struct {
@@ -46,6 +53,20 @@ type ProjectManager struct {
 	totalTime       uint64             // total totalt tid arbetat av projektledaren
 
 	user User // comp
+}
+
+// ProjectManager reciever functions
+func (projectManager ProjectManager) signReport(timeReport *TimeReport, user User) {
+	// WIP
+}
+
+func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user User) {
+	// WIP
+}
+
+func (projectManager ProjectManager) viewAllReports(project *Project) ([]TimeReport, error) {
+	// WIP
+	return project.timeReports, errors.New("WIP")
 }
 
 type User struct {
@@ -56,7 +77,12 @@ type User struct {
 // User reciever functions
 
 // function used to create a time report
-func (administrator Administrator) createProject() *TimeReport {
+func (user User) createTimeReport() *TimeReport {
+	// WIP
+	return &TimeReport{}
+}
+
+func (user User) viewTimeReport() *TimeReport {
 	// WIP
 	return &TimeReport{}
 }

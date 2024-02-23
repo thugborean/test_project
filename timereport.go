@@ -1,5 +1,7 @@
 package main
 
+import "errors"
+
 type TimeReport struct {
 	reportId     int
 	projectName  string
@@ -33,6 +35,11 @@ func (timeReport TimeReport) viewTotalTime() uint64 {
 	return 0
 }
 
+func (timeReport TimeReport) printReport() string {
+	// WIP
+	return ""
+}
+
 type Project struct {
 	timeReports    []TimeReport
 	projectName    string
@@ -43,10 +50,12 @@ type Project struct {
 
 // Project reciever functions // WIP WIP WIP
 
-func (project Project) addMember(member string, role string) {
+func (project Project) addMember(member string, role string) error {
 	//WIP
+	return errors.New("WIP")
 }
 
-func (project Project) removeMember(member string) {
+func (project Project) removeMember(member string) error {
 	//WIP
+	return errors.New("WIP")
 }
