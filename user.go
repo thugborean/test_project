@@ -21,8 +21,7 @@ func (account Account) logout() error {
 
 type Administrator struct {
 	projects map[string]Project
-	// deletedData ???
-	User // comp
+	User     // comp
 }
 
 // Administrator reciever functions
