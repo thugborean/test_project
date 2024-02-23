@@ -5,7 +5,6 @@ import "errors"
 type Account struct {
 	fullName string
 	userName string
-	password string
 }
 
 // Account reciever functions
