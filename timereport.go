@@ -8,32 +8,24 @@ type TimeReport struct {
 	userName     string
 	userRole     string
 	reportDate   string
-	hoursWorked  int
+	hoursWorked  uint32
+	isSigned     bool
 	reportStatus string // Example "draft", "signed", "unsigned"
 
 }
 
 // TimeReport reciever functions
 
-func (timeReport TimeReport) creatReport() {
+func (timeReport TimeReport) editReport() { // func is called in editTimeReport
 	// WIP
 }
 
-func (timeReport TimeReport) editReport() {
+func (timeReport TimeReport) signReport() { // is called from ProjectManager
 	// WIP
 }
 
-func (timeReport TimeReport) signReport() {
+func (timeReport TimeReport) unsignReport() { // is called from ProjectManager
 	// WIP
-}
-
-func (timeReport TimeReport) unsignReport() {
-	// WIP
-}
-
-func (timeReport TimeReport) viewTotalTime() uint64 {
-	// WIP
-	return 0
 }
 
 func (timeReport TimeReport) printReport() string {
@@ -59,4 +51,9 @@ func (project Project) addMember(member string, role string) error {
 func (project Project) removeMember(member string) error {
 	//WIP
 	return errors.New("WIP")
+}
+
+func (project Project) viewTotalTime() uint64 {
+	// WIP
+	return 0
 }

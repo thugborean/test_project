@@ -104,6 +104,7 @@ func (user User) viewTimeReport(timereports *[]TimeReport) *TimeReport {
 }
 
 func (user User) editTimeReport(timereport *TimeReport) {
+	// timereport.editReport()
 	// WIP
 }
 
