@@ -52,7 +52,7 @@ func (project *Project) removeUser(user *User) error {
 	return errors.New("WIP")
 }
 
-func (project Project) viewTotalTime() uint64 {
+func (project *Project) viewTotalTime() uint64 {
 	// WIP
 	return 0
 }
