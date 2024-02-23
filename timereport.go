@@ -6,6 +6,7 @@ type TimeReport struct {
 	reportId     int
 	projectName  string
 	userName     string
+	userRole     string
 	reportDate   string
 	hoursWorked  int
 	reportStatus string // Example "draft", "signed", "unsigned"
