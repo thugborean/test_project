@@ -19,8 +19,8 @@ func (account Account) logout() error {
 }
 
 type Administrator struct {
-	projects map[string]Project
-	User     // comp
+	projects    map[string]Project
+	ProjectUser // comp
 }
 
 // Administrator reciever functions
@@ -50,7 +50,7 @@ type ProjectManager struct {
 	managedProjects map[string]Project // projekt som förvaltas av projektledaren
 	totalTime       uint64             // total totalt tid arbetat av projektledaren
 
-	User // comp
+	ProjectMember // comp
 }
 
 // ProjectManager reciever functions
@@ -82,7 +82,7 @@ func (projectManager ProjectManager) viewTotalTime(project *Project) uint64 {
 	return 0
 }
 
-type ProjectUser struct {
+type ProjectMember struct {
 	timereports []TimeReport
 	role        string // ?????
 	Account            // comp
@@ -91,29 +91,32 @@ type ProjectUser struct {
 // User reciever functions
 
 // function used to create a time report, returning a *TimeReport is questionable
-func (projectUser ProjectUser) createTimeReport(Project *Project) *TimeReport {
+func (ProjectMember ProjectMember) createTimeReport(Project *Project) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (projectUser ProjectUser) viewTimeReport(timereports *[]TimeReport) *TimeReport {
+func (ProjectMember ProjectMember) viewTimeReport(timereports *[]TimeReport) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (projectUser ProjectUser) editTimeReport(timereport *TimeReport) {
+func (ProjectMember ProjectMember) editTimeReport(timereport *TimeReport) {
 	// timereport.editReport()
 	// WIP
 }
 
-func (projectUser ProjectUser) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
+func (projectUser ProjectMember) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
 	// WIP
 	return errors.New("WIP")
 }
 
-func (projectUser ProjectUser) printRole() string {
-	return projectUser.role
+func (ProjectMember ProjectMember) printRole() string {
+	return ProjectMember.role
 }
 
 type User interface {
+	ProjectMember
+	ProjectManager
+	Administrator
 }

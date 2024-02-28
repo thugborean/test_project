@@ -8,7 +8,7 @@ type TimeReport struct {
 	userName     string
 	userRole     string
 	reportDate   string
-	hoursWorked  uint32
+	timeWorked   uint64
 	isSigned     bool
 	reportStatus string // Example "draft", "signed", "unsigned"
 }
