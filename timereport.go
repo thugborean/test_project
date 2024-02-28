@@ -33,16 +33,16 @@ func (timeReport TimeReport) printReport() string {
 }
 
 type Project struct {
-	timeReports  []TimeReport
-	projectName  string
-	projectUsers map[string]User
-	projectRoles map[string]User
-	TimeReport   // comp
+	timeReports    []TimeReport
+	projectName    string
+	projectmembers map[string]User
+	projectRoles   map[string]User
+	TimeReport     // comp
 }
 
 // Project reciever functions // WIP WIP WIP
 
-func (project *Project) addUser(projectUsers map[string]User, role string) error {
+func (project *Project) addUser(projectmembers map[string]User, role string) error {
 	//WIP
 	return errors.New("WIP")
 }

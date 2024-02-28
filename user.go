@@ -24,12 +24,12 @@ type Administrator struct {
 }
 
 // Administrator reciever functions
-func (administrator Administrator) addUser(user *User) error {
+func (administrator Administrator) addUser(project *Project, user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
 
-func (administrator Administrator) removerUser(user *User) error {
+func (administrator Administrator) removerUser(project *Project, user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
@@ -38,7 +38,7 @@ func (administrator Administrator) deleteProject(project *Project) {
 	// WIP
 }
 
-func (administrator Administrator) changeUserRole() {
+func (administrator Administrator) changeUserRole(project *Project, user *User) {
 	// WIP
 }
 func (administrator Administrator) recoverDeletedData() error { // Hur fan ska detta funka dock haha...
@@ -54,30 +54,30 @@ type ProjectManager struct {
 }
 
 // ProjectManager reciever functions
-func (projectManager ProjectManager) signReport(timeReport *TimeReport, user ProjectMember) {
+func (projectManager ProjectManager) signReport(timeReport *TimeReport, user User) {
 	// WIP
 }
 
-func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user ProjectMember) {
+func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user User) {
 	// WIP
 }
 
-func (projectManager ProjectManager) viewAllReports(project *Project) ([]TimeReport, error) {
+func (projectManager ProjectManager) getAllReports(project *Project) ([]TimeReport, error) {
 	// WIP
 	return project.timeReports, errors.New("WIP")
 }
 
-func (projectManager ProjectManager) giveUserRole(user *User, project *Project, newRole string) error {
+func (projectManager ProjectManager) assignRole(user *User, project *Project, newRole string) error {
 	// WIP
 	return errors.New("WIP")
 }
 
-func (projectManager ProjectManager) removeUserFromProject(user *User, project *Project) error {
+func (projectManager ProjectManager) removeMember(project *Project, user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
 
-func (projectManager ProjectManager) viewTotalTime(project *Project) uint64 {
+func (projectManager ProjectManager) getTotalTime(project *Project) uint64 {
 	// WIP
 	return 0
 }
@@ -91,17 +91,17 @@ type ProjectMember struct {
 // User reciever functions
 
 // function used to create a time report, returning a *TimeReport is questionable
-func (ProjectMember ProjectMember) createTimeReport(Project *Project) *TimeReport {
+func (ProjectMember *ProjectMember) createTimeReport(Project *Project) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (ProjectMember ProjectMember) viewTimeReport(timereports *[]TimeReport) *TimeReport {
+func (ProjectMember ProjectMember) getTimeReport(timereports *[]TimeReport) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (ProjectMember ProjectMember) editTimeReport(timereport *TimeReport) {
+func (ProjectMember *ProjectMember) editTimeReport(timereport *TimeReport) {
 	// timereport.editReport()
 	// WIP
 }
