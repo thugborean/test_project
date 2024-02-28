@@ -42,7 +42,7 @@ type Project struct {
 
 // Project reciever functions // WIP WIP WIP
 
-func (project *Project) addUser(projectUsers *map[string]User, role string) error {
+func (project *Project) addUser(projectUsers map[string]User, role string) error {
 	//WIP
 	return errors.New("WIP")
 }

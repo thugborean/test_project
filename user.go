@@ -82,7 +82,7 @@ func (projectManager ProjectManager) viewTotalTime(project *Project) uint64 {
 	return 0
 }
 
-type User struct {
+type ProjectUser struct {
 	timereports []TimeReport
 	role        string // ?????
 	Account            // comp
@@ -91,26 +91,29 @@ type User struct {
 // User reciever functions
 
 // function used to create a time report, returning a *TimeReport is questionable
-func (user User) createTimeReport(Project *Project) *TimeReport {
+func (projectUser ProjectUser) createTimeReport(Project *Project) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (user User) viewTimeReport(timereports *[]TimeReport) *TimeReport {
+func (projectUser ProjectUser) viewTimeReport(timereports *[]TimeReport) *TimeReport {
 	// WIP
 	return &TimeReport{}
 }
 
-func (user User) editTimeReport(timereport *TimeReport) {
+func (projectUser ProjectUser) editTimeReport(timereport *TimeReport) {
 	// timereport.editReport()
 	// WIP
 }
 
-func (user User) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
+func (projectUser ProjectUser) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
 	// WIP
 	return errors.New("WIP")
 }
 
-func (user User) printRole() string {
-	return user.role
+func (projectUser ProjectUser) printRole() string {
+	return projectUser.role
+}
+
+type User interface {
 }
