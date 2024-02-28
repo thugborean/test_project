@@ -19,8 +19,8 @@ func (account Account) logout() error {
 }
 
 type Administrator struct {
-	projects    map[string]Project
-	ProjectUser // comp
+	projects      map[string]Project
+	ProjectMember // comp
 }
 
 // Administrator reciever functions
@@ -54,11 +54,11 @@ type ProjectManager struct {
 }
 
 // ProjectManager reciever functions
-func (projectManager ProjectManager) signReport(timeReport *TimeReport, user User) {
+func (projectManager ProjectManager) signReport(timeReport *TimeReport, user ProjectMember) {
 	// WIP
 }
 
-func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user User) {
+func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user ProjectMember) {
 	// WIP
 }
 
@@ -111,12 +111,7 @@ func (projectUser ProjectMember) deleteTimeReport(*TimeReport) error { // Ska ba
 	return errors.New("WIP")
 }
 
-func (ProjectMember ProjectMember) printRole() string {
-	return ProjectMember.role
-}
-
 type User interface {
-	ProjectMember
-	ProjectManager
-	Administrator
+	login()
+	logout()
 }
