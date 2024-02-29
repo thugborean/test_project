@@ -37,7 +37,6 @@ type Project struct {
 	projectName    string
 	projectmembers map[string]User
 	projectRoles   map[string]User
-	TimeReport     // comp
 }
 
 // Project reciever functions // WIP WIP WIP

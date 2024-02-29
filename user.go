@@ -24,14 +24,12 @@ func (administrator Administrator) removerUser(project *Project, user *User) err
 	return errors.New("WIP")
 }
 
-func (administrator Administrator) deleteProject(project *Project) {
+func (administrator Administrator) deleteProject(project *Project) error {
 	// WIP
+	return errors.New("WIP")
 }
 
-func (administrator Administrator) changeUserRole(project *Project, user *User) {
-	// WIP
-}
-func (administrator Administrator) recoverDeletedData() error { // Hur fan ska detta funka dock haha...
+func (administrator Administrator) changeUserRole(project *Project, user *User) error {
 	// WIP
 	return errors.New("WIP")
 }
@@ -54,12 +52,14 @@ type ProjectManager struct {
 }
 
 // ProjectManager reciever functions
-func (projectManager ProjectManager) signReport(timeReport *TimeReport, user User) {
+func (projectManager ProjectManager) signReport(timeReport *TimeReport, user User) error {
 	// WIP
+	return errors.New("WIP")
 }
 
-func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user User) {
+func (projectManager ProjectManager) unsignReport(timeReport *TimeReport, user User) error {
 	// WIP
+	return errors.New("WIP")
 }
 
 func (projectManager ProjectManager) getAllReports(project *Project) ([]TimeReport, error) {
@@ -77,9 +77,9 @@ func (projectManager ProjectManager) removeMember(project *Project, user *User) 
 	return errors.New("WIP")
 }
 
-func (projectManager ProjectManager) getTotalTime(project *Project) uint64 {
+func (projectManager ProjectManager) getTotalTime(project *Project) (uint64, error) {
 	// WIP
-	return 0
+	return 0, errors.New("WIP")
 }
 
 func (projectManager *ProjectManager) login() error {
@@ -101,14 +101,14 @@ type ProjectMember struct {
 // User reciever functions
 
 // function used to create a time report, returning a *TimeReport is questionable
-func (ProjectMember *ProjectMember) createTimeReport(Project *Project) *TimeReport {
+func (ProjectMember *ProjectMember) createTimeReport(Project *Project) (*TimeReport, error) {
 	// WIP
-	return &TimeReport{}
+	return &TimeReport{}, errors.New("WIP")
 }
 
-func (ProjectMember ProjectMember) getTimeReport(timereports *[]TimeReport) *TimeReport {
+func (ProjectMember ProjectMember) getTimeReport(timereports *[]TimeReport) (*TimeReport, error) {
 	// WIP
-	return &TimeReport{}
+	return &TimeReport{}, errors.New("WIP")
 }
 
 func (ProjectMember *ProjectMember) editTimeReport(timereport *TimeReport) {
@@ -116,7 +116,7 @@ func (ProjectMember *ProjectMember) editTimeReport(timereport *TimeReport) {
 	// WIP
 }
 
-func (projectUser ProjectMember) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
+func (projectUser ProjectMember) deleteTimeReport(timeReport *TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
 	// WIP
 	return errors.New("WIP")
 }
