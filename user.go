@@ -7,19 +7,9 @@ type Account struct {
 	userName string
 }
 
-// Account reciever functions
-func (account Account) login() error {
-	// WIP
-	return errors.New("WIP")
-}
-
-func (account Account) logout() error {
-	// WIP
-	return errors.New("WIP")
-}
-
 type Administrator struct {
-	projects      map[string]Project
+	projects map[string]Project
+	Account
 	ProjectMember // comp
 }
 
@@ -46,10 +36,20 @@ func (administrator Administrator) recoverDeletedData() error { // Hur fan ska d
 	return errors.New("WIP")
 }
 
+func (administrator *Administrator) login() error {
+	// WIP
+	return errors.New("WIP")
+}
+
+func (administrator *Administrator) logout() error {
+	// WIP
+	return errors.New("WIP")
+}
+
 type ProjectManager struct {
 	managedProjects map[string]Project // projekt som förvaltas av projektledaren
 	totalTime       uint64             // total totalt tid arbetat av projektledaren
-
+	Account
 	ProjectMember // comp
 }
 
@@ -82,6 +82,16 @@ func (projectManager ProjectManager) getTotalTime(project *Project) uint64 {
 	return 0
 }
 
+func (projectManager *ProjectManager) login() error {
+	// WIP
+	return errors.New("WIP")
+}
+
+func (projectManager *ProjectManager) logout() error {
+	// WIP
+	return errors.New("WIP")
+}
+
 type ProjectMember struct {
 	timereports []TimeReport
 	role        string // ?????
@@ -107,6 +117,16 @@ func (ProjectMember *ProjectMember) editTimeReport(timereport *TimeReport) {
 }
 
 func (projectUser ProjectMember) deleteTimeReport(*TimeReport) error { // Ska bara project manager kunna göra detta? fråga ledarna!
+	// WIP
+	return errors.New("WIP")
+}
+
+func (projectUser *ProjectMember) login() error {
+	// WIP
+	return errors.New("WIP")
+}
+
+func (projectUser *ProjectMember) logout() error {
 	// WIP
 	return errors.New("WIP")
 }
